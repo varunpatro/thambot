@@ -1,0 +1,19 @@
+{
+  "name": "thambot",
+  "description": "WhatsApp Bot for USP O-Week 2015",
+  "version": "0.0.1",
+  "author": "Varun Patro, Tan Yui Wei, Joey Yeo",
+  "dependencies": {
+    "jsonfile": "^2.0.0",
+    "restler": "^3.2.2",
+    "whatsapi": "^1.0.2"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "^0.1.13",
+    "grunt-contrib-jshint": "^0.11.2",
+    "grunt-jsbeautifier": "^0.2.10",
+    "grunt-jscs": "^1.8.0",
+    "grunt-nodemon": "^0.4.0"
+  }
+}
