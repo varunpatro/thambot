@@ -1,0 +1,9 @@
+node_modules/
+private/
+logs/
+
+*.swp
+
+test*
+
+log*
