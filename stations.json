@@ -1,0 +1,183 @@
+{
+
+	/*
+	"station":{
+		"index": ,
+		"compulsory": ,
+		"location": "",
+		"description": "",
+		"password": "",
+		"letters": [""]
+	}
+	*/
+
+	// Start
+	"s1": {
+		"index": 1,
+		"compulsory": true,
+		"location": "LT25",
+		"description": "PLACEHOLDER",
+		"password": "game start",
+		"letters": ["A", "B"]
+	},
+		
+	// Bridge between S16-S17
+	"s2": {
+		"index": 2,
+		"compulsory": false,
+		"location": "Bridge between S16-S17",
+		"description": "Take a \"totem pole\" photo of at least 6 people from your house, standing in a line with
+						their heads stacked up.",
+		"password": "PLACEHOLDER",
+		"letters": ["A", "B"]
+		},
+		
+	// S16-04-39
+	"s3": {
+		"index": 3,	
+		"compulsory": false,
+		"location": "S16-04-39",
+		"description": "",
+		"password": "PLACEHOLDER",
+		"letters": ["A", "B"]
+	},
+
+	// LT34
+	"s4": {
+		"index": 4,
+		"compulsory": false,
+		"location": "LT34",
+		"description": "",
+		"password": "",
+		"letters": ["A", "B"]
+	},
+
+	// Tahir Foundation Building
+	"s5": {
+		"index": 5,
+		"compulsory": false,
+		"location": "Tahir Foundation Building",
+		"description": "Roll a ping pong ball down the slope into a plastic cup.",
+		"password": "PLACEHOLDER",
+		"letters": ["A", "B"]
+	},
+
+	// University Hall
+	"s6": {
+		"index": 6,
+		"compulsory": false,
+		"location": "University Hall",
+		"description": "Your NOGL will give you a list of numbered objects to memorise in 1 minute. One house member at a time, recite the objects in ascending order.",
+		"password": "PLACEHOLDER",
+		"letters": ["A", "B"]
+	},
+
+	// Track grandstands
+	"s7":{
+		"index": 7,
+		"compulsory": true,
+		"location": "Track grandstands",
+		"description": "Inter-house dodgeball!",
+		"password": "",
+		"letters": [""]
+	},
+
+	// Basketball court
+	"s8":{
+		"index": 8,
+		"compulsory": false,
+		"location": "",
+		"description": "",
+		"password": "",
+		"letters": [""]
+	},
+
+	// MPSH
+	"s9":{
+		"index": 9,
+		"compulsory": false,
+		"location": "MPSH",
+		"description": "Read out NUS exam rules backwards.",
+		"password": "PLACEHOLDER",
+		"letters": ["A", "B"]
+	},
+
+	// YIH
+	"s10":{
+		"index": 10,
+		"compulsory": false,
+		"location": "",
+		"description": "",
+		"password": "",
+		"letters": [""]
+	},
+
+	// SDE Pickup Point
+	"s11":{
+		"index": 11,
+		"compulsory": false,
+		"location": "",
+		"description": "",
+		"password": "",
+		"letters": [""]
+	},
+
+	// Engin Courtyard
+	"s12":{
+		"index": 12,
+		"compulsory": false,
+		"location": "",
+		"description": "",
+		"password": "",
+		"letters": [""]
+	},
+
+	// EA-07
+	"s13":{
+		"index": 13,
+		"compulsory": false,
+		"location": "",
+		"description": "Find E2-B-02, E1A-03-03 (EDIC), EA-07-04, E3-06-07.",
+		"password": "",
+		"letters": [""]
+	},
+
+	// E5 Driveway/Security Post
+	"s14":{
+		"index": ,
+		"compulsory": ,
+		"location": "",
+		"description": "",
+		"password": "",
+		"letters": [""]
+	},
+
+	// Engin McDonalds
+	"s15":{
+		"index": 15,
+		"compulsory":  false,
+		"location": "Engin McDonalds",
+		"description": "Order a burger with no fillings. Yes, just the buns.",
+		"password": "",
+		"letters": [""]
+	},
+
+	// CLB Garden
+	"s16":{
+		"index": 16,
+		"compulsory": true,
+		"location": "CLB Garden",
+		"description": "",
+		"password": "",
+		"letters": [""]
+	},
+
+	// AS1-03-04
+	"s17":{
+		"index": 17,
+		"compulsory": false,
+		"location": "",
+		"description": "",
+		"password": "",
+		"letters": [""]
+	}
