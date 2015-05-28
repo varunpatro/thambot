@@ -31,3 +31,33 @@ function request(msgObj, callback) { //msg object. Returns a msgObj
         message: msgResponse
     };
 }
+
+function responseType(input) {
+    if (input[0] != '/') {
+        //log error message
+        return syntaxErrorMessage;
+    }
+    var cmd = input.substr(1).split(' ');
+    switch (cmd[0]) {
+        default:
+            return 'text';
+    }
+}
+
+function parseCmd(input, phone, msgObj, callback) {
+    if (input[0] != '/') {
+        //log error message
+        return syntaxErrorMessage;
+    }
+    var cmd = input.substr(1).split(' ');
+    switch(cmd[0]) {
+            case 'points':
+                return faultResponse(msgObj);
+            case 'password':
+                return helpMessage;
+    }
+}
+
+module.exports = {
+    'request': request
+};
