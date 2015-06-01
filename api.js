@@ -1,5 +1,6 @@
 var auth = require('./auth');
 var util = require('./util');
+var aroundNUS = require('./aroundNUS');
 
 var invalidUserMessage = "Hi, you're not registered in the Thambot server. Please contact your OGL to register.";
 
@@ -31,3 +32,39 @@ function request(msgObj, callback) { //msg object. Returns a msgObj
         message: msgResponse
     };
 }
+
+function responseType(input) {
+    if (input[0] != '/') {
+        //log error message
+        return syntaxErrorMessage;
+    }
+    var cmd = input.substr(1).split(' ');
+    switch (cmd[0]) {
+        case 'password':
+            return 'function';
+        default:
+            return 'text';
+    }
+}
+
+function parseCmd(input, phone, msgObj, callback) {
+    if (input[0] != '/') {
+        //log error message
+        return syntaxErrorMessage;
+    }
+    var cmd = input.substr(1).split(' ');
+    switch (cmd[0]) {
+        case 'help':
+            return helpMessage;
+        case 'password':
+            var pw = cmd[1];
+            return aroundNUS.getTask(pw);
+        default:
+            return helpMessge;
+    }
+}
+
+module.exports = {
+    'request': request
+};
+
