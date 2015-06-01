@@ -55,3 +55,25 @@ wa.on('receivedMessage', function(messageObj) {
     console.log(messageObj.body);
     console.log("From: " + messageObj.from);
 });
+
+/** CALL BACKS */
+
+function logged(err) {
+    if (err) {
+        console.log(err);
+        return;
+    }
+    console.log('Logged in to WA server');
+    wa.sendIsOnline();
+}
+
+/** HELPER FUNCTIONS */
+
+function sendMsg(responsePhone, responseMessage) {
+    wa.sendMessage(responsePhone, responseMessage, function(err, id) {
+        if (err) {
+            console.log(err.message);
+            return;
+        }
+    });
+}
