@@ -180,12 +180,12 @@
 		"letters": ["A", "B"]
 	},
 
-	"station":{
+	"s21":{
 		"index": 21,
 		"compulsory": false,
 		"location": "COM1 Level 2",
 		"task": "Do the BubbleSort dance, sorting 10 members of the house by their birthday in ascending order.",
-		"password": "",
+		"password": "s21",
 		"letters": ["A", "B"]
 	},
 

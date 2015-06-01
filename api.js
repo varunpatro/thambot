@@ -40,8 +40,7 @@ function responseType(input) {
     }
     var cmd = input.substr(1).split(' ');
     switch (cmd[0]) {
-        case 'password':
-            return 'function';
+
         default:
             return 'text';
     }
@@ -53,6 +52,7 @@ function parseCmd(input, phone, msgObj, callback) {
         return syntaxErrorMessage;
     }
     var cmd = input.substr(1).split(' ');
+
     switch (cmd[0]) {
         case 'help':
             return helpMessage;
