@@ -4,6 +4,7 @@ var studentsInfoFilepath =  './private/students_info.json';
 var studentsInfo = jf.readFileSync(studentsInfoFilepath);
 
 function isAllowed(phone) {
+    studentsInfo = jf.readFileSync(studentsInfoFilepath);
     return studentsInfo.hasOwnProperty(phone);
 }
 

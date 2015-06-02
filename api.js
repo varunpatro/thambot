@@ -2,10 +2,11 @@ var auth = require('./auth');
 var util = require('./util');
 var aroundNUS = require('./aroundNUS');
 var dataManip = require('./modifyHouseData');
+var admin = require('./admin');
 var broadcaster = require('./broadcaster');
 
 var invalidUserMessage = "Hi, you're not registered in the Thambot server. Please contact your OGL to register.";
-
+var notOGLMessage = "Hey, you're not an OGL!";
 var helpMessage =
     'Here\'s what you can ask Thambot! ' + 
     '\nType /points to get your house\'s current points.' +
@@ -26,9 +27,14 @@ function request(msgObj, callback) { //msg object. Returns a msgObj
     var msgRequest = msgObj.body;
     var msgType = '';
     var msgResponse = '';
-
+    
+    
     if (!auth.isAllowed(msgFrom)) {
-        msgResponse = invalidUserMessage;
+        if (isRegisterRequest(msgRequest)){
+            msgResponse = processRegisterRequest(msgRequest, msgFrom);
+        } else {    
+            msgResponse = invalidUserMessage;
+        }
     } else {
         msgResponse = parseCmd(msgRequest, msgFrom, msgObj, callback);
         msgType = responseType(msgRequest);
@@ -39,6 +45,28 @@ function request(msgObj, callback) { //msg object. Returns a msgObj
         type: msgType,
         message: msgResponse
     };
+}
+
+function isRegisterRequest(input) {
+    if (input[0] == '/') {
+        var cmd = input.substr(1).split(',');
+        console.log(cmd);
+        if (cmd[0] == 'registerme') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
+function processRegisterRequest(input, phone) {
+    var cmd = input.substr(1).split(',');
+    if (cmd[1] != 'imcoolenough') {
+        return "You failed the security measure";
+    }
+    if (cmd.length < 6) {
+        return "You messed up. Try again";
+    }
+    return admin.addOGL(phone, cmd[2], cmd[3], cmd[4], cmd[5]);
 }
 
 function responseType(input) {
@@ -72,7 +100,7 @@ function parseCmd(input, phone, msgObj, callback) {
             return helpMessage;
         case 'ogl': 
             if (!auth.isOGL(phone)) {
-                return "Hey, you're not an OGL!";
+                return notOGLMessage;
             }
             return oglHelpMessage;     
         //////////////////////////////////////////////AUTH, BROADCASTS
@@ -89,11 +117,12 @@ function parseCmd(input, phone, msgObj, callback) {
                 }
             } else {
                 return "Hey, you're not allowed back here!";
-            }
+            }            
+            
         //////////////////////////////////////////////LETTERS 
         case 'addletter':
             if (!auth.isOGL(phone)) {
-                return "Hey, you're not an OGL!";
+                return notOGLMessage;
             }
             if (cmd[1].length > 1) {
                 return "A letter has ONE CHARACTER";
@@ -109,7 +138,7 @@ function parseCmd(input, phone, msgObj, callback) {
             return dataManip.getPoints(auth.getHouse(phone));
         case 'addpoints':
             if (!auth.isOGL(phone)) {
-                return "Hey, you're not an OGL!";
+                return notOGLMessage;
             }
             if (isNaN(cmd[1])) {
                 return errorMessage_NaN;
@@ -119,7 +148,7 @@ function parseCmd(input, phone, msgObj, callback) {
         case 'minuspoints':
         case 'subtractpoints':
             if (!auth.isOGL(phone)) {
-                return "Hey, you're not an OGL!";
+                return notOGLMessage;
             }
             if (isNaN(cmd[1])) {
                 return errorMessage_NaN;
