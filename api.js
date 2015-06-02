@@ -79,7 +79,7 @@ function parseCmd(input, phone, msgObj, callback) {
             if (isNaN(cmd[1])) {
                 return errorMessage_NaN;
             } else {
-                return pointSys.addPoints(auth.getHouse(phone), cmd[1]);
+                return pointSys.updateHousePoints(auth.getHouse(phone), cmd[1]);
             }
         default:
             return helpMessage;
