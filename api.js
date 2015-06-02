@@ -118,7 +118,11 @@ function parseCmd(input, phone, msgObj, callback) {
             } else {
                 return "Hey, you're not allowed back here!";
             }            
-            
+        case 'revokeOGL':
+            if (!auth.isLordAlmighty(phone)) {
+                return "You're not worthy.";
+            }
+            return admin.revokeOGL(cmd[1]);
         //////////////////////////////////////////////LETTERS 
         case 'addletter':
             if (!auth.isOGL(phone)) {

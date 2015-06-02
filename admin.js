@@ -39,7 +39,26 @@ function addOGL(phone, firstname, lastname, matric, house) {
     return "Added!";
 }
 
+function revokeOGL(phone) {
+    for (var phone in studentsInfo_obj) {
+        if(studentsInfo_obj.hasOwnProperty(phone)) {
+            var student = studentsInfo_obj[phone];
+            for(var property in student) {
+                if (property == "ogl") {
+                    if (student.hasOwnProperty(property)) {
+                        if (student.ogl == true) {
+                            student.ogl = false;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    console.log(JSON.stringify(houses_obj));
 
+   // fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
+    return "REVOKED";
+}
 
 function isValidHouse(house) {
     var houses = ['ankaa', 'nocturna', 'ianthe', 'triton', 'ursaia', 'saren'];
@@ -52,5 +71,6 @@ function isValidHouse(house) {
 }
 
 module.exports = {
-    'addOGL': addOGL
+    'addOGL': addOGL,
+    'revokeOGL': revokeOGL
 };
