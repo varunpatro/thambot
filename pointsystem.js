@@ -8,17 +8,20 @@ function getPoints(house) {
 }
 
 function addPoints(house, n) {
+    console.log('n: ' + n);
+    console.log('housepoints: ' + houses[house].points);
 	houses[house].points += n;
+    console.log(houses[house].points);
 	return "Added. Current points for " + houses[house].name + ": " + houses[house].points;
 }
 
-function delPoints(house, n) {
+function subtractPoints(house, n) {
 	houses[house].points -= n;
-	return "Deleted. Current points for " + houses[house].name + ": " + houses[house].points;
+	return "Subtracted. Current points for " + houses[house].name + ": " + houses[house].points;
 }
 
 module.exports = {
     'getPoints': getPoints,
     'addPoints': addPoints,
-    'delPoints': delPoints
+    'delPoints': subtractPoints
 };

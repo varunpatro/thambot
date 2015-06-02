@@ -11,9 +11,11 @@ var helpMessage =
     '\nType /password [PASSWORD] to enter in a password for an AroundNUS station.' + 
     "\nType /ogl if you are an OGL for special OGL commands.";
 
-var syntaxErrorMessage =
+var errorMessage_syntax =
     'Thambot didn\'t understand that command. Thambot is confused! Type \'/help\' for more' +
     ' information.';
+var errorMessage_NaN = 
+    "That's not a number Thambot knows how to add or subtract :( "; 
 
 var oglHelpMessage = 
     'Type /addpoints [number] to add points.';
@@ -41,7 +43,7 @@ function request(msgObj, callback) { //msg object. Returns a msgObj
 function responseType(input) {
     if (input[0] != '/') {
         //log error message
-        return syntaxErrorMessage;
+        return errorMessage_syntax;
     }
     var cmd = input.substr(1).split(' ');
     switch (cmd[0]) {
@@ -74,7 +76,11 @@ function parseCmd(input, phone, msgObj, callback) {
         case 'ogl': 
             return oglHelpMessage;
         case 'addpoints':
-            return pointSys.addPoints(auth.getHouse(phone));
+            if (isNaN(cmd[1])) {
+                return errorMessage_NaN;
+            } else {
+                return pointSys.addPoints(auth.getHouse(phone), cmd[1]);
+            }
         default:
             return helpMessage;
     }
