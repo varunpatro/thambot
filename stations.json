@@ -1,0 +1,209 @@
+{
+
+	"s1": {
+		"index": 1,
+		"compulsory": true,
+		"location": "LT25",
+		"task": "Yay! You can follow instructions!",
+		"password": "game_start",
+		"letters": []
+	},
+		
+	"s2": {
+		"index": 2,
+		"compulsory": false,
+		"location": "Bridge between S16-S17",
+		"task": "Take a \"totem pole\" photo of at least 6 people from your house, standing in a line with their heads stacked up.",
+		"password": "s2",
+		"letters": ["S", "T", "U"]
+		},
+		
+	"s3": {
+		"index": 3,	
+		"compulsory": false,
+		"location": "S16-04-39",
+		"task": "",
+		"password": "s3",
+		"letters": ["A", "B"]
+	},
+
+	"s4": {
+		"index": 4,
+		"compulsory": false,
+		"location": "LT34",
+		"task": "",
+		"password": "s4",
+		"letters": ["A", "B"]
+	},
+
+	"s5": {
+		"index": 5,
+		"compulsory": false,
+		"location": "Tahir Foundation Building",
+		"task": "Roll a ping pong ball down the slope into a plastic cup.",
+		"password": "s5",
+		"letters": ["A", "B"]
+	},
+
+	"s6": {
+		"index": 6,
+		"compulsory": false,
+		"location": "University Hall",
+		"task": "Your NOGL will give you a list of numbered objects to memorise in 1 minute. One house member at a time, recite the objects in ascending order.",
+		"password": "s6",
+		"letters": ["A", "B"]
+	},
+
+	"s7":{
+		"index": 7,
+		"compulsory": true,
+		"location": "Track grandstands",
+		"task": "Inter-house dodgeball!",
+		"password": "s7",
+		"letters": ["A", "B"]
+	},
+
+	"s8":{
+		"index": 8,
+		"compulsory": false,
+		"location": "",
+		"task": "",
+		"password": "s8",
+		"letters": ["A", "B"]
+	},
+
+	"s9":{
+		"index": 9,
+		"compulsory": false,
+		"location": "MPSH",
+		"task": "Read out NUS exam rules backwards.",
+		"password": "s9",
+		"letters": ["A", "B"]
+	},
+
+	"s10":{
+		"index": 10,
+		"compulsory": false,
+		"location": "",
+		"task": "",
+		"password": "s10",
+		"letters": ["A", "B"]
+	},
+
+	"s11":{
+		"index": 11,
+		"compulsory": false,
+		"location": "",
+		"task": "",
+		"password": "s11",
+		"letters": ["A", "B"]
+	},
+
+	"s12":{
+		"index": 12,
+		"compulsory": false,
+		"location": "",
+		"task": "",
+		"password": "s12",
+		"letters": ["A", "B"]
+	},
+
+	"s13":{
+		"index": 13,
+		"compulsory": false,
+		"location": "",
+		"task": "Find these 4 locations: E2-B-02, E1A-03-03 (EDIC), EA-07-04, E3-06-07.",
+		"password": "s13",
+		"letters": ["A", "B"]
+	},
+
+	"s14":{
+		"index": 14,
+		"compulsory": false,
+		"location": "",
+		"task": "",
+		"password": "s14",
+		"letters": ["A", "B"]
+	},
+
+	"s15":{
+		"index": 15,
+		"compulsory":  false,
+		"location": "Engin McDonalds",
+		"task": "Buy ice cream!",
+		"password": "s15",
+		"letters": ["A", "B"]
+	},
+
+	"s16":{
+		"index": 16,
+		"compulsory": true,
+		"location": "CLB Garden",
+		"task": "Choose four housemates to sit around the picnic table and build a lego structure blindfolded with instructions from their housemates who can see the model structure",
+		"password": "s16",
+		"letters": ["A", "B"]
+	},
+
+	"s17":{
+		"index": 17,
+		"compulsory": false,
+		"location": "AS1-03-04",
+		"task": "Spot the Difference: ask your NOGL to proceed.",
+		"password": "s17",
+		"letters": ["A", "B"]
+	},
+
+	"s18":{
+		"index": 18,
+		"compulsory": false,
+		"location": "The Deck",
+		"task": "",
+		"password": "s18",
+		"letters": ["A", "B"]
+	},
+
+	"s19":{
+		"index": 19,
+		"compulsory": false,
+		"location": "Fragrant Plant Garden",
+		"task": "Play charades! Look meaningfully at your NOGL for more information.",
+		"password": "s19",
+		"letters": ["A", "B"]
+	},
+
+	"s20":{
+		"index": 20,
+		"compulsory": false,
+		"location": "",
+		"task": "Party Quirks: 3 of your housemates must pretend to be invited party guests, playing a certain role (given by your NOGL). Guess what role they are playing to proceed.",
+		"password": "s20",
+		"letters": ["A", "B"]
+	},
+
+	"station":{
+		"index": 21,
+		"compulsory": false,
+		"location": "COM1 Level 2",
+		"task": "Do the BubbleSort dance, sorting 10 members of the house by their birthday in ascending order.",
+		"password": "",
+		"letters": ["A", "B"]
+	},
+
+	"s22":{
+		"index": 22,
+		"compulsory": false,
+		"location": "Mochtar Riady Building",
+		"task": "Take a photo of your entire house, with a (more or less) equal number of house members on each floor.",
+		"password": "s22",
+		"letters": ["A", "B"]
+	},
+
+	"s23":{
+		"index": 23,
+		"compulsory": true,
+		"location": "Kent Ridge Bus Terminal",
+		"task": "",
+		"password": "s23",
+		"letters": ["A", "B"]
+	}
+}
