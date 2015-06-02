@@ -6,7 +6,7 @@
 		"location": "LT25",
 		"task": "Yay! You can follow instructions!",
 		"password": "game_start",
-		"letters": ["A", "B"]
+		"letters": []
 	},
 		
 	"s2": {
@@ -15,7 +15,7 @@
 		"location": "Bridge between S16-S17",
 		"task": "Take a \"totem pole\" photo of at least 6 people from your house, standing in a line with their heads stacked up.",
 		"password": "s2",
-		"letters": ["A", "B"]
+		"letters": ["S", "T", "U"]
 		},
 		
 	"s3": {
