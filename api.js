@@ -1,7 +1,7 @@
 var auth = require('./auth');
 var util = require('./util');
 var aroundNUS = require('./aroundNUS');
-var pointsys = require('./pointsystem');
+var pointSys = require('./pointsystem');
 
 var invalidUserMessage = "Hi, you're not registered in the Thambot server. Please contact your OGL to register.";
 
@@ -67,11 +67,11 @@ function parseCmd(input, phone, msgObj, callback) {
             var pw = cmd[1];
             return aroundNUS.getTask(pw);
         case 'points':
-            return pointsys.getPoints(auth.getHouse(phone));
+            return pointSys.getPoints(auth.getHouse(phone));
         case 'ogl': 
             return "Type /addpoints [number] to add points.";
         case 'addpoints':
-            return pointsys.addPoints(auth.getHouse(phone));
+            return pointSys.addPoints(auth.getHouse(phone));
         default:
             return helpMessage;
     }
