@@ -1,7 +1,7 @@
 var auth = require('./auth');
 var util = require('./util');
 var aroundNUS = require('./aroundNUS');
-var pointSys = require('./pointsystem');
+var dataManip = require('./modifyHouseData');
 var broadcaster = require('./broadcaster');
 
 var invalidUserMessage = "Hi, you're not registered in the Thambot server. Please contact your OGL to register.";
@@ -56,8 +56,8 @@ function responseType(input) {
 function parseCmd(input, phone, msgObj, callback) {
     if (input[0] != '/') {
         var cmd = input.split(' ');
-        if (cmd[0] == 'uk') {
-            return '##1f1ec_1f1e7##';
+        if (cmd[0] == 'hello' || cmd[0] == 'hi') {
+            return "Hello, " +  auth.getFirstName(phone) + "!";
         }
         //log error message
         return errorMessage_syntax;
@@ -65,44 +65,66 @@ function parseCmd(input, phone, msgObj, callback) {
     var cmd = input.substr(1).split(' ');
 
     switch (cmd[0]) {
+        //////////////////////////////////////////////MESSAGES
         case 'hello':
             return "Hello, " +  auth.getFirstName(phone) + "!";
         case 'help':
             return helpMessage;
+        case 'ogl': 
+            if (!auth.isOGL(phone)) {
+                return "Hey, you're not an OGL!";
+            }
+            return oglHelpMessage;     
+        //////////////////////////////////////////////AUTH, BROADCASTS
         case 'password':
             var pw = cmd[1];
             return aroundNUS.getTask(pw);
-        case 'points':
-            return pointSys.getPoints(auth.getHouse(phone));
-        case 'ogl': 
-            if (auth.isOGL(phone)) {
-                return oglHelpMessage;
-            } else {
-                return "Hey, you're not an OGL!";
-            }
-        case 'addpoints':
-            if (isNaN(cmd[1])) {
-                return errorMessage_NaN;
-            } else {
-                return pointSys.addPoints(auth.getHouse(phone), cmd[1]);
-            }
-        case 'minuspoints':
-        case 'subtractpoints':
-            if (isNaN(cmd[1])) {
-                return errorMessage_NaN;
-            } else {
-                return pointSys.subtractPoints(auth.getHouse(phone), cmd[1]);
         case 'broadcast':
             if (auth.isLordAlmighty(phone)) {
                 if (isNaN(cmd[1])) {
-                    return "Wrong format!";
+                    return errorMessage_NaN;
                 } else {
                     //console.log(cmd[1]);
                     //return broadcaster.broadcast(msg, "ankaa");
                 }
-                
             } else {
                 return "Hey, you're not allowed back here!";
+            }
+        //////////////////////////////////////////////LETTERS 
+        case 'addletter':
+            if (!auth.isOGL(phone)) {
+                return "Hey, you're not an OGL!";
+            }
+            if (cmd[1].length > 1) {
+                return "A letter has ONE CHARACTER";
+            } else {
+                return dataManip.addLetter(auth.getHouse(phone), cmd[1]);
+            }
+        case 'letters':
+            return dataManip.getLetters(auth.getHouse(phone));
+        case 'clearletters':
+            return dataManip.clearLetters(auth.getHouse(phone));
+        //////////////////////////////////////////////POINTS
+        case 'points':
+            return dataManip.getPoints(auth.getHouse(phone));
+        case 'addpoints':
+            if (!auth.isOGL(phone)) {
+                return "Hey, you're not an OGL!";
+            }
+            if (isNaN(cmd[1])) {
+                return errorMessage_NaN;
+            } else {
+                return dataManip.addPoints(auth.getHouse(phone), cmd[1]);
+            }
+        case 'minuspoints':
+        case 'subtractpoints':
+            if (!auth.isOGL(phone)) {
+                return "Hey, you're not an OGL!";
+            }
+            if (isNaN(cmd[1])) {
+                return errorMessage_NaN;
+            } else {
+                return dataManip.subtractPoints(auth.getHouse(phone), cmd[1]);
             }
         default:
             return helpMessage;
