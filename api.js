@@ -15,6 +15,9 @@ var syntaxErrorMessage =
     'Thambot didn\'t understand that command. Thambot is confused! Type \'/help\' for more' +
     ' information.';
 
+var oglHelpMessage = 
+    'Type /addpoints [number] to add points.';
+
 function request(msgObj, callback) { //msg object. Returns a msgObj
     var msgFrom = util.getPhoneNum(msgObj.from);
     var msgRequest = msgObj.body;
@@ -69,7 +72,7 @@ function parseCmd(input, phone, msgObj, callback) {
         case 'points':
             return pointSys.getPoints(auth.getHouse(phone));
         case 'ogl': 
-            return "Type /addpoints [number] to add points.";
+            return oglHelpMessage;
         case 'addpoints':
             return pointSys.addPoints(auth.getHouse(phone));
         default:
