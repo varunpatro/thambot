@@ -15,7 +15,7 @@ var errorMessage_syntax =
     'Thambot didn\'t understand that command. Thambot is confused! Type \'/help\' for more' +
     ' information.';
 var errorMessage_NaN = 
-    "That's not a number Thambot knows how to add or subtract :( "; 
+    "That's not a number Thambot knows how to add or subtract :( \n Numbers look like this: 1, 2, 3, 34583489"; 
 
 var oglHelpMessage = 
     'Type /addpoints [number] to add points.';
