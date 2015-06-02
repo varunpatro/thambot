@@ -59,7 +59,7 @@ function parseCmd(input, phone, msgObj, callback) {
             return '##1f1ec_1f1e7##';
         }
         //log error message
-        return syntaxErrorMessage;
+        return errorMessage_syntax;
     }
     var cmd = input.substr(1).split(' ');
 
