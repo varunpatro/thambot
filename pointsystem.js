@@ -8,12 +8,13 @@ function getPoints(house) {
 }
 
 function addPoints(house, n) {
-	houses[house].points = houses[house].points + n;
+	houses[house].points += n;
+	jf.writeFileSync(housesFilepath, houses);
 	return "Added. Current points for " + houses[house].name + ": " + houses[house].points;
 }
 
 function delPoints(house, n) {
-	houses[house].points = houses[house].points - n;
+	houses[house].points -= n;
 	return "Deleted. Current points for " + houses[house].name + ": " + houses[house].points;
 }
 
