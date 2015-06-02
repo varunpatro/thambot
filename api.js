@@ -48,6 +48,10 @@ function responseType(input) {
 
 function parseCmd(input, phone, msgObj, callback) {
     if (input[0] != '/') {
+        var cmd = input.split(' ');
+        if (cmd[0] == 'uk') {
+            return '##1f1ec_1f1e7##';
+        }
         //log error message
         return syntaxErrorMessage;
     }
