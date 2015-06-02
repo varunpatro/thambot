@@ -8,17 +8,21 @@ function isAllowed(phone) {
 }
 
 function getHouse(phone) {
-	var key = "house";
-	console.log(studentsInfo.phone.key);
-	return studentsInfo.phone.key;
+	console.log(studentsInfo[phone].house);
+	return studentsInfo[phone].house;
 }
 
 function isOGL(phone) {
-	return studentsInfo.phone.ogl;
+	return studentsInfo[phone].ogl;
+}
+
+function getFirstName(phone) {
+	return studentsInfo[phone].firstname;
 }
 
 module.exports = {
     isAllowed: isAllowed,
     getHouse: getHouse,
-    isOGL: isOGL
+    isOGL: isOGL,
+    getFirstName: getFirstName
 };

@@ -3,21 +3,19 @@ var jf = require("jsonfile");
 var stationsFilepath =  './stations.json';
 var stations = jf.readFileSync(stationsFilepath);
 var stationsArray; var passwordsArray;
+//var lettersArray;
 readStations(stations);
-console.log(passwordsArray);
 
 var wrongPasswordMsg = "Wrong password!";
 
 function getTask(password) {
 	for(var i=0; i<passwordsArray.length; i++) {
         if (password == passwordsArray[i]) {
-            return stationsArray[i].task;
+            return "TASK: " + stationsArray[i].task + "\nAVAILABLE LETTERS: " ;
         }
     }
     return wrongPasswordMsg;
 }
-
-
 
 function readStations(station_list) {
     var arr_stations = [];
@@ -27,10 +25,10 @@ function readStations(station_list) {
             var station = station_list[station_name];
             arr_stations.push(station);
             for (var password in station) {
-                if(password == "password") {
-                    if(station.hasOwnProperty(password)){
+                if( password == "password") {
+                    if (station.hasOwnProperty(password)){
                         arr_passwords.push(station[password]);
-                    }  
+                    } 
                 }
             }
         }

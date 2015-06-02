@@ -42,7 +42,6 @@ function responseType(input) {
     }
     var cmd = input.substr(1).split(' ');
     switch (cmd[0]) {
-
         default:
             return 'text';
     }
@@ -56,14 +55,19 @@ function parseCmd(input, phone, msgObj, callback) {
     var cmd = input.substr(1).split(' ');
 
     switch (cmd[0]) {
+        case 'hello':
+            return "Hello, " +  auth.getFirstName(phone) + "!";
         case 'help':
             return helpMessage;
         case 'password':
             var pw = cmd[1];
             return aroundNUS.getTask(pw);
         case 'points':
-            console.log(phone);
             return pointsys.getPoints(auth.getHouse(phone));
+        case 'ogl': 
+            return "Type /addpoints [number] to add points.";
+        case 'addpoints':
+            return pointsys.addPoints(auth.getHouse(phone));
         default:
             return helpMessage;
     }
