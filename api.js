@@ -1,13 +1,15 @@
 var auth = require('./auth');
 var util = require('./util');
 var aroundNUS = require('./aroundNUS');
+var pointsys = require('./pointsystem');
 
 var invalidUserMessage = "Hi, you're not registered in the Thambot server. Please contact your OGL to register.";
 
 var helpMessage =
     'Here\'s what you can ask Thambot! ' + 
-    '\n/points - get your house\'s current points' +
-    '\n/password - enter in a password for Around NUS';
+    '\nType /points to get your house\'s current points.' +
+    '\nType /password [PASSWORD] to enter in a password for an AroundNUS station.' + 
+    "\nType /ogl if you are an OGL for special OGL commands.";
 
 var syntaxErrorMessage =
     'Thambot didn\'t understand that command. Thambot is confused! Type \'/help\' for more' +
@@ -59,8 +61,11 @@ function parseCmd(input, phone, msgObj, callback) {
         case 'password':
             var pw = cmd[1];
             return aroundNUS.getTask(pw);
+        case 'points':
+            console.log(phone);
+            return pointsys.getPoints(auth.getHouse(phone));
         default:
-            return helpMessge;
+            return helpMessage;
     }
 }
 
