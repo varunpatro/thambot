@@ -20,9 +20,14 @@ function getFirstName(phone) {
 	return studentsInfo[phone].firstname;
 }
 
+function isLordAlmighty(phone) {
+	return studentsInfo[phone].lordAlmighty;
+}
+
 module.exports = {
     isAllowed: isAllowed,
     getHouse: getHouse,
     isOGL: isOGL,
-    getFirstName: getFirstName
+    getFirstName: getFirstName,
+    isLordAlmighty: isLordAlmighty
 };

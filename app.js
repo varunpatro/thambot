@@ -77,3 +77,7 @@ function sendMsg(responsePhone, responseMessage) {
         }
     });
 }
+
+module.exports = {
+    sendMsg: sendMsg
+};

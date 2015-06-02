@@ -9,8 +9,8 @@ function getPoints(house) {
 
 function addPoints(house, n) {
     var housePoints = houses[house].points;
-    console.log('n: ' + n);
-    console.log('housepoints: ' + houses[house].points);
+    //console.log('n: ' + n);
+    //console.log('housepoints: ' + houses[house].points);
 	houses[house].points = housePoints*1+(n*1);
     console.log(houses[house].points);
 	return "Added. Current points for " + houses[house].name + ": " + houses[house].points;

@@ -2,23 +2,24 @@ var auth = require('./auth');
 var util = require('./util');
 var aroundNUS = require('./aroundNUS');
 var pointSys = require('./pointsystem');
+var broadcaster = require('./broadcaster');
 
 var invalidUserMessage = "Hi, you're not registered in the Thambot server. Please contact your OGL to register.";
 
 var helpMessage =
     'Here\'s what you can ask Thambot! ' + 
     '\nType /points to get your house\'s current points.' +
-    '\nType /password [PASSWORD] to enter in a password for an AroundNUS station.' + 
+    '\nType /password [PASSWORD] to enter in a password for an AcrossNUS station.' + 
     "\nType /ogl if you are an OGL for special OGL commands.";
 
 var errorMessage_syntax =
     'Thambot didn\'t understand that command. Thambot is confused! Type \'/help\' for more' +
     ' information.';
 var errorMessage_NaN = 
-    "That's not a number Thambot knows how to add or subtract :( \n Numbers look like this: 1, 2, 3, 34583489"; 
+    "That's not a number Thambot knows how to add or subtract :( \nNumbers look like this: 1, 2, 3, 34583489"; 
 
 var oglHelpMessage = 
-    'Type /addpoints [number] to add points.';
+    'Type /addpoints [number] to add points.\nType /subtractpoints [number] to subtract points. \nType /addletters [letter] to add a letter.';
 
 function request(msgObj, callback) { //msg object. Returns a msgObj
     var msgFrom = util.getPhoneNum(msgObj.from);
@@ -74,12 +75,28 @@ function parseCmd(input, phone, msgObj, callback) {
         case 'points':
             return pointSys.getPoints(auth.getHouse(phone));
         case 'ogl': 
-            return oglHelpMessage;
+            if (auth.isOGL(phone)) {
+                return oglHelpMessage;
+            } else {
+                return "Hey, you're not an OGL!";
+            }
         case 'addpoints':
             if (isNaN(cmd[1])) {
                 return errorMessage_NaN;
             } else {
                 return pointSys.addPoints(auth.getHouse(phone), cmd[1]);
+            }
+        case 'broadcast':
+            if (auth.isLordAlmighty(phone)) {
+                if (isNaN(cmd[1])) {
+                    return "Wrong format!";
+                } else {
+                    //console.log(cmd[1]);
+                    //return broadcaster.broadcast(msg, "ankaa");
+                }
+                
+            } else {
+                return "Hey, you're not allowed back here!";
             }
         default:
             return helpMessage;
