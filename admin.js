@@ -19,7 +19,7 @@ function addOGL(phone, firstname, lastname, matric, house) {
     if (studentsInfo_obj.hasOwnProperty(phone)) {
         return "You're already registered, you dummy!";
     } 
-    if (matric.length !=9) {
+    if (!isValidMatric(matric)) {
         return "Bad matric number!";
     }
     if (!isValidHouse(house)) {
@@ -58,6 +58,17 @@ function revokeOGL(phone) {
 
    // fs.writeFile(housesFilepath, JSON.stringify(houses_obj));
     return "REVOKED";
+}
+
+function isValidMatric(matric) {
+    var m = matric.toUpperCase();
+    if(m[0] != 'A' || m.length != 9 || m[1] != 0) {
+        return false;
+    } 
+    if(!isNaN(m[8]) || isNaN(m.substr(1,7))) {
+        return false;
+    } 
+    return true;
 }
 
 function isValidHouse(house) {
