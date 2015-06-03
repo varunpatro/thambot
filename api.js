@@ -72,7 +72,7 @@ function processRegisterRequest(input, phone) {
 function responseType(input) {
     if (input[0] != '/') {
         //log error message
-        return errorMessage_syntax;
+        return 'image';
     }
     var cmd = input.substr(1).split(' ');
     switch (cmd[0]) {
@@ -88,7 +88,7 @@ function parseCmd(input, phone, msgObj, callback) {
             return "Hello, " +  auth.getFirstName(phone) + "!";
         }
         //log error message
-        return errorMessage_syntax;
+        return './confusedtham.jpg';
     }
     var cmd = input.substr(1).split(' ');
 
