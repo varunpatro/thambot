@@ -1,0 +1,98 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'jsonfile', '—save' ]
+2 info using npm@2.10.1
+3 info using node@v0.12.4
+4 verbose install initial load of /Users/yuiwei/Documents/thambot/package.json
+5 warn package.json thambot@0.0.1 No repository field.
+6 warn package.json thambot@0.0.1 No license field.
+7 verbose installManyTop reading scoped package data from /Users/yuiwei/Documents/thambot/node_modules/grunt/package.json
+8 verbose installManyTop reading scoped package data from /Users/yuiwei/Documents/thambot/node_modules/grunt-cli/package.json
+9 verbose installManyTop reading scoped package data from /Users/yuiwei/Documents/thambot/node_modules/grunt-contrib-jshint/package.json
+10 verbose installManyTop reading scoped package data from /Users/yuiwei/Documents/thambot/node_modules/grunt-jsbeautifier/package.json
+11 verbose installManyTop reading scoped package data from /Users/yuiwei/Documents/thambot/node_modules/grunt-jscs/package.json
+12 verbose installManyTop reading scoped package data from /Users/yuiwei/Documents/thambot/node_modules/grunt-nodemon/package.json
+13 verbose installManyTop reading scoped package data from /Users/yuiwei/Documents/thambot/node_modules/jsonfile/package.json
+14 verbose installManyTop reading scoped package data from /Users/yuiwei/Documents/thambot/node_modules/restler/package.json
+15 verbose installManyTop reading scoped package data from /Users/yuiwei/Documents/thambot/node_modules/whatsapi/package.json
+16 info package.json grunt@0.4.5 No license field.
+17 info package.json grunt-cli@0.1.13 No license field.
+18 info package.json grunt-contrib-jshint@0.11.2 No license field.
+19 info package.json grunt-jsbeautifier@0.2.10 No license field.
+20 info package.json restler@3.2.2 No license field.
+21 verbose readDependencies loading dependencies from /Users/yuiwei/Documents/thambot/package.json
+22 verbose install jsonfile is installed as 2.0.1
+23 silly cache add args [ 'jsonfile@^2.0.1', null ]
+24 verbose cache add spec jsonfile@^2.0.1
+25 silly cache add args [ '—save', null ]
+26 verbose cache add spec —save
+27 silly cache add parsed spec { raw: 'jsonfile@^2.0.1',
+27 silly cache add   scope: null,
+27 silly cache add   name: 'jsonfile',
+27 silly cache add   rawSpec: '^2.0.1',
+27 silly cache add   spec: '>=2.0.1 <3.0.0',
+27 silly cache add   type: 'range' }
+28 silly addNamed jsonfile@>=2.0.1 <3.0.0
+29 verbose addNamed ">=2.0.1 <3.0.0" is a valid semver range for jsonfile
+30 silly addNameRange { name: 'jsonfile', range: '>=2.0.1 <3.0.0', hasData: false }
+31 silly mapToRegistry name jsonfile
+32 silly mapToRegistry using default registry
+33 silly mapToRegistry registry https://registry.npmjs.org/
+34 silly mapToRegistry uri https://registry.npmjs.org/jsonfile
+35 verbose addNameRange registry:https://registry.npmjs.org/jsonfile not in flight; fetching
+36 silly cache add parsed spec { raw: '—save',
+36 silly cache add   scope: null,
+36 silly cache add   name: null,
+36 silly cache add   rawSpec: '—save',
+36 silly cache add   spec: '/Users/yuiwei/Documents/thambot/—save',
+36 silly cache add   type: 'local' }
+37 error addLocal Could not install /Users/yuiwei/Documents/thambot/—save
+38 verbose request uri https://registry.npmjs.org/jsonfile
+39 verbose request no auth needed
+40 info attempt registry request try #1 at 2:46:04 AM
+41 verbose request id 78b598fa6225cb83
+42 verbose etag "9RABJQYQFOAIHDBXQGDYKGNEQ"
+43 http request GET https://registry.npmjs.org/jsonfile
+44 http 304 https://registry.npmjs.org/jsonfile
+45 silly get cb [ 304,
+45 silly get   { date: 'Mon, 01 Jun 2015 18:45:53 GMT',
+45 silly get     via: '1.1 varnish',
+45 silly get     'cache-control': 'max-age=60',
+45 silly get     etag: '"9RABJQYQFOAIHDBXQGDYKGNEQ"',
+45 silly get     age: '27',
+45 silly get     connection: 'keep-alive',
+45 silly get     'x-served-by': 'cache-lax1425-LAX',
+45 silly get     'x-cache': 'HIT',
+45 silly get     'x-cache-hits': '2',
+45 silly get     'x-timer': 'S1433184353.099253,VS0,VE0',
+45 silly get     vary: 'Accept' } ]
+46 verbose etag https://registry.npmjs.org/jsonfile from cache
+47 verbose get saving jsonfile to /Users/yuiwei/.npm/registry.npmjs.org/jsonfile/.cache.json
+48 silly addNameRange number 2 { name: 'jsonfile', range: '>=2.0.1 <3.0.0', hasData: true }
+49 silly addNameRange versions [ 'jsonfile',
+49 silly addNameRange   [ '0.0.1',
+49 silly addNameRange     '1.0.0',
+49 silly addNameRange     '1.0.1',
+49 silly addNameRange     '1.1.0',
+49 silly addNameRange     '1.1.1',
+49 silly addNameRange     '1.2.0',
+49 silly addNameRange     '2.0.0',
+49 silly addNameRange     '2.0.1' ] ]
+50 silly addNamed jsonfile@2.0.1
+51 verbose addNamed "2.0.1" is a plain semver version for jsonfile
+52 silly cache afterAdd jsonfile@2.0.1
+53 verbose afterAdd /Users/yuiwei/.npm/jsonfile/2.0.1/package/package.json not in flight; writing
+54 verbose afterAdd /Users/yuiwei/.npm/jsonfile/2.0.1/package/package.json written
+55 verbose stack Error: ENOENT, open '/Users/yuiwei/Documents/thambot/—save'
+55 verbose stack     at Error (native)
+56 verbose cwd /Users/yuiwei/Documents/thambot
+57 error Darwin 14.0.0
+58 error argv "node" "/usr/local/bin/npm" "install" "jsonfile" "—save"
+59 error node v0.12.4
+60 error npm  v2.10.1
+61 error path /Users/yuiwei/Documents/thambot/—save
+62 error code ENOENT
+63 error errno -2
+64 error enoent ENOENT, open '/Users/yuiwei/Documents/thambot/—save'
+64 error enoent This is most likely not a problem with npm itself
+64 error enoent and is related to npm not being able to find a file.
+65 verbose exit [ -2, true ]
