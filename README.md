@@ -1,6 +1,6 @@
 # THAMBOT
 
-USP Orientation Week 2015 Whatsapp Bot
+USP Orientation Week 2015 Telegram Bot
 
 Authors
 =======
